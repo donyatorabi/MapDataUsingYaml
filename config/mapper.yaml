@@ -1,0 +1,28 @@
+json:
+  date:
+    key: date
+    type: date
+  localName:
+    key: localName
+    type: string
+  name:
+    key: name
+    type: string
+  countryCode:
+    key: countryCode
+    type: string
+  fixed:
+    key: fixed
+    type: boolean
+  global:
+    key: global
+    type: boolean
+  counties:
+    key: countries
+    type: array
+  launchYear:
+    key: launchYear
+    type: int
+  type:
+    key: type
+    type: string

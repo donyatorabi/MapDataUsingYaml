@@ -1,15 +1,15 @@
 json:
   date:
-    key: date
+    key: date_holiday
     type: date
   localName:
-    key: localName
+    key: local_name
     type: string
   name:
-    key: name
+    key: name_holiday
     type: string
   countryCode:
-    key: countryCode
+    key: country_code
     type: string
   fixed:
     key: fixed
@@ -18,11 +18,11 @@ json:
     key: global
     type: boolean
   counties:
-    key: countries
+    key: title
     type: array
   launchYear:
-    key: launchYear
+    key: launch_year
     type: int
   type:
-    key: type
+    key: type_holiday
     type: string

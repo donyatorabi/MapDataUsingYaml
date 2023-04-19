@@ -4,10 +4,16 @@ namespace Modules\Api\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\Api\Repositories\CountryRepository;
+use Modules\Api\Repositories\CountryRepositoryInterface;
+use Modules\Api\Repositories\HolidayRepository;
+use Modules\Api\Repositories\HolidayRepositoryInterface;
 use Modules\Api\Services\ApiService;
 use Modules\Api\Services\ApiServiceInterface;
 use Modules\Api\Services\CurlService;
 use Modules\Api\Services\CurlServiceInterface;
+use Modules\Api\Services\HolidayService;
+use Modules\Api\Services\HolidayServiceInterface;
 use Modules\Api\Services\XMLConverterService;
 use Modules\Api\Services\XMLConverterServiceInterface;
 
@@ -46,6 +52,9 @@ class ApiServiceProvider extends ServiceProvider
         $this->app->bind(CurlServiceInterface::class, CurlService::class);
         $this->app->bind(ApiServiceInterface::class, ApiService::class);
         $this->app->bind(XMLConverterServiceInterface::class, XMLConverterService::class);
+        $this->app->bind(HolidayServiceInterface::class, HolidayService::class);
+        $this->app->bind(HolidayRepositoryInterface::class, HolidayRepository::class);
+        $this->app->bind(CountryRepositoryInterface::class, CountryRepository::class);
         $this->app->register(RouteServiceProvider::class);
     }
 

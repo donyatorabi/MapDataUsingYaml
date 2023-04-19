@@ -3,6 +3,7 @@
 namespace Modules\Api\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Api\Services\ApiService;
@@ -24,11 +25,12 @@ class ApiController extends Controller
 
     /**
      * Display a listing of the resource.
-     * @return Renderable
+     * @return JsonResponse
      */
     public function index()
     {
-        return $this->apiService->getCurl('https://date.nager.at/api/v2/publicholidays/2020/US');
+        $response = $this->apiService->getCurl('https://date.nager.at/api/v2/publicholidays/2020/US');
+        return response()->json($response);
     }
 
     /**
